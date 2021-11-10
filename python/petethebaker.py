@@ -1,3 +1,5 @@
+import math
+
 def main():
     recipe = {
         'flour': 500,
@@ -13,9 +15,21 @@ def main():
         }
     print(recipe)
     print(ingredients)
+    print(cakes(recipe, ingredients))
 
 def cakes(recipe, available):
-    
+    factor = None
+    for item in recipe:
+        if item in available:
+            tempFactor = available[item] / recipe[item]
+            if factor:
+                if tempFactor < factor:
+                    factor = tempFactor
+            else:
+                factor = tempFactor
+        else:
+            return 0
+    return math.floor(factor)
 
 if __name__ == "__main__":
     main()
