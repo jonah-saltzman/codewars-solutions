@@ -23,6 +23,9 @@ def format_duration(time):
         'second': 0
     }
 
+    if time in (0, ''):
+        return 'now'
+
     while time != 0:
         if time - units['year'] >= 0:
             time = time - units['year']
