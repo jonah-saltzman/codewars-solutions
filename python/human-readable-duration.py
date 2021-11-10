@@ -3,14 +3,15 @@ def main():
     print(format_duration(time))
     return
 
+units = {
+    'year': 31536000,
+    'day': 86400,
+    'hour': 3600,
+    'minute': 60,
+    'second': 1
+}
+
 def format_duration(time):
-    units = {
-        'year': 31536000,
-        'day': 86400,
-        'hour': 3600,
-        'minute': 60,
-        'second': 1
-    }
     results = {
         'year': 0,
         'day': 0,
@@ -18,6 +19,7 @@ def format_duration(time):
         'minute': 0,
         'second': 0
     }
+
     while time != 0:
         if time - units['year'] > 0:
             time = time - units['year']
@@ -34,7 +36,29 @@ def format_duration(time):
         else:
             time = time - units['second']
             results['second'] += 1
-    return results
+
+    unitCount = 0
+    pop = []
+    for unit in results:
+        if results[unit] != 0:
+            unitCount += 1
+        else:
+            pop.append(unit)
+    for unit in pop:
+        results.pop(unit)
+    
+    strings = []
+    for element in results:
+        strings.append(formatUnit(element, results[element]))
+
+    return strings
+
+def formatUnit(unit, n):
+    string = str(n) + " " + unit
+    if n == 1:
+        return string
+    return string + "s"
+
 
 if __name__ == "__main__":
     main()
