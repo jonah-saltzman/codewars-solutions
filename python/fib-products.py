@@ -5,7 +5,6 @@ def main():
     print(productFib(prod))
 
 def productFib(prod):
-    equalProd = False
     sqrt = math.floor(math.sqrt(prod))
     m = -1
     fib = 0
