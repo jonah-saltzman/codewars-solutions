@@ -1,20 +1,24 @@
+import math
+
 def main():
-    prod = 5895
+    prod = 4895
     print(productFib(prod))
 
 def productFib(prod):
-    smallestProd = 0
-    n = -1
     equalProd = False
-    while smallestProd < prod:
-        n += 1
-        x = findFib(n)
-        y = findFib(n + 1)
-        smallestProd = x * y
-        if smallestProd == prod:
-            equalProd = True
-            break
-    return [x, y, equalProd]
+    sqrt = math.floor(math.sqrt(prod))
+    m = -1
+    fib = 0
+    while fib < sqrt:
+        m += 1
+        fib = findFib(m)
+    bigger = findFib(m + 1)
+    smaller = findFib(m - 1)
+    if fib * bigger == prod:
+        return [fib, bigger, True]
+    if smaller * fib == prod:
+        return [smaller, fib, True]
+    return [fib, bigger, False] if fib * bigger > prod else [smaller, fib, False]
 
 def findFib(n):
     if n == 0:
