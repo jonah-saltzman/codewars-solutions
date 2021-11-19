@@ -8,16 +8,15 @@ function isInteresting(number, awesomePhrases) {
 		return 0
 	}
 	if (
-		(num.length && awesomePhrases.includes(number)) ||
+		awesomePhrases.includes(number) ||
 		num.some((n) => tests.some((test) => test(n)))
 	) {
 		return 2
 	}
 	if (
-		(closeNums.length &&
-			[number + 1, number + 2].some((closeNum) =>
-				awesomePhrases.includes(closeNum)
-			)) ||
+		[number + 1, number + 2].some((closeNum) =>
+			awesomePhrases.includes(closeNum)
+		) ||
 		closeNums.some((closeN) => tests.some((test) => test(closeN)))
 	) {
 		return 1
