@@ -14,12 +14,10 @@ function generateArrays(array) {
     if (array.length === 1) return [array]
     for (let i = 0; i < array.length; i++) {
         const movingElements = array.slice(0, i).concat(array.slice(i + 1))
-        generateArrays(movingElements).forEach(generateArray => result.push([array[i]].concat(generateArray)))
+        generateArrays(movingElements).forEach(permutation => result.push([array[i]].concat(permutation)))
     }
     return result
 }
 
-const string = 'aabb'
-const r = permutations(string)
-console.log('new3-------------------------')
-console.log(r)
+// driver code
+console.log(permutations('aabb'))
