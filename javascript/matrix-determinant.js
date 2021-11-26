@@ -3,13 +3,12 @@ function determinant(m) {
     let det = 0
     for (let x = 0; x < m.length; x++) {
         if (x % 2 == 0) det += m[0][x] * determinant(getMinor(x, m))
-        else det -= m[0][x] * determinant(getMinor(x, m))
+        else            det -= m[0][x] * determinant(getMinor(x, m))
     }
     return det
 }
 
 function getMinor(index, matrix) {
-    const newN = matrix.length - 1
     const minor = []
     for (let i = 0; i < matrix.length - 1; i++) {
         minor.push([])
