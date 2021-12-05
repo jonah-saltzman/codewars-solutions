@@ -49,14 +49,14 @@ const gameOver = (board, player) => {
 	const opponent = player === 'x' ? 'o' : 'x'
 	if (board === null) return 0
 	if (conditions.some((condition) =>
-			condition.every((pos) => board[pos] === player))) {
-		wins++
-		return 1
+        condition.every((pos) => board[pos] === player))) {
+            wins++
+            return 1
 	}
 	if (conditions.some((condition) =>
-			condition.every((pos) => board[pos] === opponent))) {
-		losses++
-		return -1
+		condition.every((pos) => board[pos] === opponent))) {
+            losses++
+            return -1
 	}
 	if (board.every((pos) => pos)) {
 		draws++
