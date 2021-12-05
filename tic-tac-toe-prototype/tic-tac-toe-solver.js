@@ -2,32 +2,25 @@
 function movesToCompare(board, player) {
 
     const moves = [] 
-    getMoves([...board], player).forEach(move => moves.push({move: move, score: 0}))
+    getMoves(board, player).forEach(move => moves.push({move: move}))
 
     moves.forEach(move => move.score = scoreBoard(generateBoard(board, move.move), player, player))
 
-    const validMoves = moves.filter(score => score.move.player)
-    const highestScore = validMoves.reduce(
-        (highScore, move) => 
-            move.score > highScore 
-            ? move.score 
-            : highScore, 
-        validMoves[0].score
-    )
+    const validMoves = moves.filter((score) => score.move.player)
+		const highestScore = validMoves.reduce(
+			(highScore, move) => (move.score > highScore ? move.score : highScore),
+			validMoves[0].score
+		)
 
-    const nextMoves = validMoves.filter(move => move.score === highestScore)
-    return nextMoves
+    return validMoves.filter(move => move.score === highestScore)
 }
 
 function scoreBoard(board, moveBy, player) {
-    
-    const opponent = player === 'x' ? 'o' : 'x'
-    const nextMover = moveBy === 'x' ? 'o' : 'x'
 
-    if (board === null) return 0
-    if (conditions.some(condition => condition.every(pos => board[pos] === player))) return 1
-    if (conditions.some(condition => condition.every(pos => board[pos] === opponent))) return -1
-    if (board.every((pos) => pos)) return 0
+    const boardResult = gameOver(board, player)
+    if (boardResult !== false) return boardResult
+
+    const nextMover = moveBy === 'x' ? 'o' : 'x'
 
     const boards = getMoves(board, nextMover).map(move => move.player ? generateBoard(board, move) : null)
 
@@ -43,11 +36,33 @@ function generateBoard(board, move) {
 
 function getMoves(board, nextPlayer) {
     const moves = [] 
-    board.forEach((position, index) => moves.push({
-        player: !position ? nextPlayer : null,
-        toIndex: index
-    }))
+    board.forEach((position, index) =>
+			moves.push({
+                player: position ? null : nextPlayer, 
+                toIndex: index 
+            })
+		)
     return moves
+}
+
+const gameOver = (board, player) => {
+	const opponent = player === 'x' ? 'o' : 'x'
+	if (board === null) return 0
+	if (conditions.some((condition) =>
+			condition.every((pos) => board[pos] === player))) {
+		wins++
+		return 1
+	}
+	if (conditions.some((condition) =>
+			condition.every((pos) => board[pos] === opponent))) {
+		losses++
+		return -1
+	}
+	if (board.every((pos) => pos)) {
+		draws++
+		return 0
+	}
+	return false
 }
 
 const xWinBoard = ['x', 'x', 'x', null, null, null, null, null, null]
@@ -69,7 +84,15 @@ const conditions = [
 	[2, 4, 6],
 ]
 
-const board = [null, null, null, null, 'x', null, null, null, null]
+let wins = 0
+let losses = 0
+let draws = 0
 
-console.log(`final return: `)
+const board = [null, 'x', null, null, 'o', null, null, null, 'x']
+
 console.log(movesToCompare(board, 'o'))
+console.log(wins - losses)
+console.log(`wins: ${wins}`)
+console.log(`losses: ${losses}`)
+console.log(`draws: ${draws}`)
+console.log(`outcomes: ${wins + losses + draws}`)
