@@ -37,11 +37,11 @@ function generateBoard(board, move) {
 function getMoves(board, nextPlayer) {
     const moves = [] 
     board.forEach((position, index) =>
-			moves.push({
-                player: position ? null : nextPlayer, 
-                toIndex: index 
-            })
-		)
+        moves.push({
+            player: position ? null : nextPlayer,
+            toIndex: index,
+        })
+    )
     return moves
 }
 
