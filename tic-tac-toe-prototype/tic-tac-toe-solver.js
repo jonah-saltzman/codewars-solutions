@@ -7,10 +7,10 @@ function movesToCompare(board, player) {
     moves.forEach(move => move.score = scoreBoard(generateBoard(board, move.move), player, player))
 
     const validMoves = moves.filter((score) => score.move.player)
-		const highestScore = validMoves.reduce(
-			(highScore, move) => (move.score > highScore ? move.score : highScore),
-			validMoves[0].score
-		)
+    const highestScore = validMoves.reduce(
+        (highScore, move) => (move.score > highScore ? move.score : highScore),
+        validMoves[0].score
+    )
 
     return validMoves.filter(move => move.score === highestScore)
 }
