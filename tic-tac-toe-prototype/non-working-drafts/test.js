@@ -1,10 +1,42 @@
-function movesToCompare(board, player) {
+const conditions = [
+	[0, 1, 2],
+	[3, 4, 5],
+	[6, 7, 8],
+	[0, 3, 6],
+	[1, 4, 7],
+	[2, 5, 8],
+	[0, 4, 8],
+	[2, 4, 6],
+]
+
+const alg = {
+	wins: 0,
+	losses: 0,
+	draws: 0,
+}
+
+function easyDriver(board, playerIndex) {
+	console.log(`using easy driver`)
+	alg.wins = 0
+    alg.losses = 0
+    alg.draws = 0
+	const player = playerIndex === 0 ? 'x' : 'o'
 	const moves = []
-	getMoves(board, player).forEach((move) => moves.push({ move: move }))
+	getMoves(board, player).forEach((returnedMove) => {
+		const newMoveObj = {
+			move: returnedMove,
+		}
+		moves.push(newMoveObj)
+	})
 
 	moves.forEach(
 		(move) =>
-			(move.score = scoreBoard(generateBoard(board, move.move), player, player))
+			(move.score = scoreBoard(
+				generateBoard(board, move.move),
+				player,
+				player,
+				0
+			))
 	)
 
 	const validMoves = moves.filter((score) => score.move.player)
@@ -12,13 +44,15 @@ function movesToCompare(board, player) {
 		(highScore, move) => (move.score > highScore ? move.score : highScore),
 		validMoves[0].score
 	)
-
 	return validMoves.filter((move) => move.score === highestScore)
 }
 
-function scoreBoard(board, moveBy, player) {
+function scoreBoard(board, moveBy, player, depth) {
 	const boardResult = gameOver(board, player)
-	if (boardResult !== false) return boardResult
+	if (boardResult !== false) {
+		if (depth === 0) return boardResult === 1 ? Infinity : Infinity * -1
+		return boardResult / (depth + 1)
+	}
 
 	const nextMover = moveBy === 'x' ? 'o' : 'x'
 
@@ -28,7 +62,7 @@ function scoreBoard(board, moveBy, player) {
 
 	return boards.reduce(
 		(score, board) =>
-			board ? score + scoreBoard(board, nextMover, player) : score,
+			board ? score + scoreBoard(board, nextMover, player, depth + 1) : score,
 		0
 	)
 }
@@ -59,7 +93,7 @@ const gameOver = (board, player) => {
 			condition.every((pos) => board[pos] === player)
 		)
 	) {
-		wins++
+		alg.wins++
 		return 1
 	}
 	if (
@@ -67,44 +101,20 @@ const gameOver = (board, player) => {
 			condition.every((pos) => board[pos] === opponent)
 		)
 	) {
-		losses++
+		alg.losses++
 		return -1
 	}
 	if (board.every((pos) => pos)) {
-		draws++
+		alg.draws++
 		return 0
 	}
 	return false
 }
 
-const xWinBoard = ['x', 'x', 'x', null, null, null, null, null, null]
-const oWinBoard = ['o', 'o', 'o', null, null, null, null, null, null]
-const drawBoard = ['x', 'x', 'o', 'o', 'o', 'x', 'x', 'o', 'x']
-const fullXwin = ['x', 'x', 'x', 'x', 'o', 'o', 'o', 'o', 'x']
-const fullOwin = ['o', 'o', 'o', 'o', 'x', 'x', 'x', 'x', 'o']
+function getAlgNumbers() {
+	return alg
+}
 
-const testBoard = [null, null, null, null, null, null, null, null, null]
+const testboard = [null, null, 'x', 'o', null, null, null, null, null]
 
-const conditions = [
-	[0, 1, 2],
-	[3, 4, 5],
-	[6, 7, 8],
-	[0, 3, 6],
-	[1, 4, 7],
-	[2, 5, 8],
-	[0, 4, 8],
-	[2, 4, 6],
-]
-
-let wins = 0
-let losses = 0
-let draws = 0
-
-const board = [null, 'x', null, null, 'o', null, null, null, 'x']
-
-console.log(movesToCompare(board, 'o'))
-console.log(wins - losses)
-console.log(`wins: ${wins}`)
-console.log(`losses: ${losses}`)
-console.log(`draws: ${draws}`)
-console.log(`outcomes: ${wins + losses + draws}`)
+console.log(easyDriver(testboard, 1))
