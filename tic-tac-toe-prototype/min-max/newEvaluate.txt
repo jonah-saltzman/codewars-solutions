@@ -1,0 +1,23 @@
+maxDepth: 8
+[
+  { move: { player: 'o', toIndex: 1 }, score: 0 },
+  { move: { player: 'o', toIndex: 2 }, score: 0 },
+  { move: { player: 'o', toIndex: 4 }, score: 0 },
+  { move: { player: 'o', toIndex: 5 }, score: 0 },
+  { move: { player: 'o', toIndex: 6 }, score: 0 },
+  { move: { player: 'o', toIndex: 7 }, score: 0 },
+  { move: { player: 'o', toIndex: 11 }, score: 0 },
+  { move: { player: 'o', toIndex: 12 }, score: 0 },
+  { move: { player: 'o', toIndex: 15 }, score: 0 },
+  { move: { player: 'o', toIndex: 16 }, score: 0 },
+  { move: { player: 'o', toIndex: 18 }, score: 0 },
+  { move: { player: 'o', toIndex: 19 }, score: 0 },
+  { move: { player: 'o', toIndex: 21 }, score: 0 },
+  { move: { player: 'o', toIndex: 22 }, score: 0 },
+  { move: { player: 'o', toIndex: 23 }, score: 0 }
+]
+15 boards of equal score
+win: 199420 
+lose: 1110993 
+draw: 0
+19793710 moves

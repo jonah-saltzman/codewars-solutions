@@ -1,0 +1,6 @@
+maxDepth: 100
+[ { move: { player: 'o', toIndex: 11 }, score: 100 } ]
+win: 1177450 
+lose: 401755 
+draw: 3936068
+16671408 moves

@@ -1,0 +1,28 @@
+maxDepth: 8
+initial move order?
+[
+  { move: { player: 'o', toIndex: 0 }, score: -99 },
+  { move: { player: 'o', toIndex: 2 }, score: -99 },
+  { move: { player: 'o', toIndex: 3 }, score: -99 },
+  { move: { player: 'o', toIndex: 4 }, score: -99 },
+  { move: { player: 'o', toIndex: 6 }, score: -99 },
+  { move: { player: 'o', toIndex: 7 }, score: -99 },
+  { move: { player: 'o', toIndex: 8 }, score: -99 },
+  { move: { player: 'o', toIndex: 9 }, score: -99 },
+  { move: { player: 'o', toIndex: 10 }, score: -99 },
+  { move: { player: 'o', toIndex: 11 }, score: -99 },
+  { move: { player: 'o', toIndex: 13 }, score: -99 },
+  { move: { player: 'o', toIndex: 14 }, score: -99 },
+  { move: { player: 'o', toIndex: 15 }, score: -99 },
+  { move: { player: 'o', toIndex: 16 }, score: -99 },
+  { move: { player: 'o', toIndex: 17 }, score: -99 },
+  { move: { player: 'o', toIndex: 18 }, score: -99 },
+  { move: { player: 'o', toIndex: 19 }, score: -99 },
+  { move: { player: 'o', toIndex: 24 }, score: 0 }
+]
+[ { move: { player: 'o', toIndex: 24 }, score: 0 } ]
+1 boards of equal score
+win: 327276 
+lose: 1733 
+draw: 0
+1,185,180 moves

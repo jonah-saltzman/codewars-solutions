@@ -1,0 +1,373 @@
+maxDepth: 8
+unsorted root moves:
+[
+  [
+    [
+      'o',  'o',  null, null, null,
+      'o',  null, null, null, null,
+      null, null, 'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    0
+  ],
+  [
+    [
+      null, 'o',  'o',  null, null,
+      'o',  null, null, null, null,
+      null, null, 'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    2
+  ],
+  [
+    [
+      null, 'o',  null, 'o',  null,
+      'o',  null, null, null, null,
+      null, null, 'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    3
+  ],
+  [
+    [
+      null, 'o',  null, null, 'o',
+      'o',  null, null, null, null,
+      null, null, 'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    4
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  'o',  null, null, null,
+      null, null, 'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    6
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, 'o',  null, null,
+      null, null, 'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    7
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, 'o',  null,
+      null, null, 'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    8
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, 'o',
+      null, null, 'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    9
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, null,
+      'o',  null, 'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    10
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, null,
+      null, 'o',  'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    11
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, null,
+      null, null, 'o',  'o',  null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    13
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, null,
+      null, null, 'o',  null, 'o',
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    14
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, null,
+      null, null, 'o',  null, null,
+      'o',  null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    15
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, null,
+      null, null, 'o',  null, null,
+      null, 'o',  null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    16
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, null,
+      null, null, 'o',  null, null,
+      null, null, 'o',  null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    17
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, null,
+      null, null, 'o',  null, null,
+      null, null, null, 'o',  null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    18
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, null,
+      null, null, 'o',  null, null,
+      null, null, null, null, 'o',
+      'x',  'x',  'x',  'x',  null
+    ],
+    19
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, null,
+      null, null, 'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  'o'
+    ],
+    24
+  ]
+]
+sorted root moves:
+[
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, null,
+      null, null, 'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  'o'
+    ],
+    24
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, null,
+      null, null, 'o',  null, null,
+      null, null, null, 'o',  null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    18
+  ],
+  [
+    [
+      'o',  'o',  null, null, null,
+      'o',  null, null, null, null,
+      null, null, 'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    0
+  ],
+  [
+    [
+      null, 'o',  null, 'o',  null,
+      'o',  null, null, null, null,
+      null, null, 'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    3
+  ],
+  [
+    [
+      null, 'o',  null, null, 'o',
+      'o',  null, null, null, null,
+      null, null, 'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    4
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  'o',  null, null, null,
+      null, null, 'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    6
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, 'o',  null,
+      null, null, 'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    8
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, 'o',
+      null, null, 'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    9
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, null,
+      null, null, 'o',  'o',  null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    13
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, null,
+      null, null, 'o',  null, 'o',
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    14
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, null,
+      null, null, 'o',  null, null,
+      null, null, null, null, 'o',
+      'x',  'x',  'x',  'x',  null
+    ],
+    19
+  ],
+  [
+    [
+      null, 'o',  'o',  null, null,
+      'o',  null, null, null, null,
+      null, null, 'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    2
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, 'o',  null, null,
+      null, null, 'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    7
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, null,
+      'o',  null, 'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    10
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, null,
+      null, 'o',  'o',  null, null,
+      null, null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    11
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, null,
+      null, null, 'o',  null, null,
+      'o',  null, null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    15
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, null,
+      null, null, 'o',  null, null,
+      null, 'o',  null, null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    16
+  ],
+  [
+    [
+      null, 'o',  null, null, null,
+      'o',  null, null, null, null,
+      null, null, 'o',  null, null,
+      null, null, 'o',  null, null,
+      'x',  'x',  'x',  'x',  null
+    ],
+    17
+  ]
+]
+[ { moves: { player: 'o', toIndex: 24 }, score: 0 } ]
+1 boards of equal score
+win: 327276 
+lose: 1733 
+draw: 0
+1,185,180 moves
